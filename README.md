@@ -54,7 +54,17 @@
     * Each instructions contained in the `Dockerfile`, create a layer. Layers use space and as the levels increase, the final image size also increases. This is because the system keeps all the changes between the various statements.
     It may be a good practice to combine the various instructions in a single line. But beware, it’s important to design the Dockerfile to use the layers cache system as much as possible.
     * Alpine Linux is built around `musl`, `libc` and `busybox`. This makes it smaller and more resource efficient than traditional GNU/Linux distributions. In other words, a smaller and more secure Linux distribution.
+
+## Security
+* [Docker Bench for Security](https://github.com/docker/docker-bench-security)
+
+    The Docker Bench for Security is a script that checks for dozens of common best-practices around deploying Docker containers in production. The tests are all automated, and are inspired by the [CIS Docker Benchmark v1.2.0](https://www.cisecurity.org/benchmark/docker/).
+ * CIS Docker Community Edition Benchmark v1.1.0 - 07-06-2017
+
+    File: [Link](files/CIS_Docker_Community_Edition_Benchmark_v1.1.0.pdf)
     
+    License: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
 ## Files required
 * .dockerignore
 * Dockerfile
