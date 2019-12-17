@@ -121,7 +121,7 @@ npm-debug
     ```
 
 ## docker build
-Copy the `Dockerfile` to the root directory of package you want to build and run
+Copy the `Dockerfile` to the root directory of package you want to `build` and `run`
 ```
 docker build \
 -t foo/bar:0.1 .
