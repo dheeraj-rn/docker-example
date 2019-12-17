@@ -166,5 +166,7 @@ S_USERNAME=username
 PASSWORD=password
 REC_URL=http://example.com/rec
 CRMURL=http://example.com/crm
-
 ```
+
+## Todo
+* Use Docker build-in healthchecks. uses Dockerfile HEALTHCHECK with /healthz route to help Docker know if your container is running properly (example always returns 200).
