@@ -65,9 +65,12 @@ By leveraging the `.dockerignore` file, we can exclude files and directories we 
 If a line in `.dockerignore` file starts with `#` in column 1, then this line is considered as a comment and is ignored before interpreted by the CLI.
 
 ```
-.git
 node_modules
 npm-debug
 .vscode
+.npmignore
+.eslintrc.json
+.gitignore
+.git
+*.md
 ```
-
