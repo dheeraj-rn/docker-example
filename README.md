@@ -119,3 +119,52 @@ npm-debug
     # Production
     FROM node:12-alpine
     ```
+
+## docker build
+Copy the `Dockerfile` to the root directory of package you want to build and run
+```
+docker build \
+-t foo/bar:0.1 .
+```
+
+## docker run
+
+```
+docker run \
+--expose 5000 \
+-it --init -p 5000:5000 \
+-e "PORT=5000" \
+-e "APP_IKEY=123" \
+-e "CLIENT_ID=123" \
+-e "CLIENT_SECRET="123\
+-e "REDIRECT_URL=http://example.com" \
+-e "S_USERNAME=username" \
+-e "PASSWORD=password" \
+-e "REC_URL=http://example.com/rec" \
+-e "CRMURL=http://example.com/crm" \
+foo/bar:0.1
+```
+
+If you want to load environment variables from a file `env_file`
+```
+docker run \
+--expose 5000 \
+-it --init -p 5000:5000 \
+--env-file=../env_file \
+foo/bar:0.1
+```
+
+```
+#env_file
+
+PORT=5000
+APP_IKEY=123
+CLIENT_ID=123
+CLIENT_SECRET=123
+REDIRECT_URL=http://example.com
+S_USERNAME=username
+PASSWORD=password
+REC_URL=http://example.com/rec
+CRMURL=http://example.com/crm
+
+```
