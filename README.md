@@ -84,3 +84,38 @@ npm-debug
 .git
 *.md
 ```
+
+## Dockerfile
+* For `Development`
+    ```
+    # Development
+    FROM node:carbon
+
+    # Create app directory
+    WORKDIR /app
+
+    # A wildcard is used to ensure both package.json AND package-lock.json are copied
+    COPY package*.json /app/
+
+    # Install app dependencies
+    RUN npm install
+
+    # Set environment variables
+    ENV PORT=3000 APP_IKEY='' CLIENT_ID='' CLIENT_SECRET='' REDIRECT_URL='' S_USERNAME=''  PASSWORD='' REC_URL=''
+
+    # Bundle app source
+    COPY . /app
+
+    EXPOSE 3000
+
+    USER node
+
+    CMD [ "node", "server/index.js" ]
+    ```
+* For `Production`
+    
+    Replace the first 2 lines with in `Dockerfile` with
+    ```
+    # Production
+    FROM node:12-alpine
+    ```
